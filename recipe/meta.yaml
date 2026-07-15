@@ -1,15 +1,15 @@
-{% set version = "0.9" %}
+{% set version = "0.10" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-litedown
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/litedown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/litedown/litedown_{{ version }}.tar.gz
-  sha256: 35e1c58fd063c300d37ee0b1874827dbcbbc43b625a2d0011e4f4d5556e3f53f
+  sha256: 67bf33b205989ece20c02ee0082d042067a2c47a820f9e4e164e9b2edc4f4fba
 
 build:
   number: 0
@@ -43,9 +43,9 @@ test:
 about:
   home: https://github.com/yihui/litedown
   license: MIT
-  summary: Render R Markdown to Markdown (without using 'knitr'), and Markdown to lightweight HTML or 'LaTeX' documents with the 'commonmark' package (instead of 'Pandoc'). Some missing Markdown features in 'commonmark' are also supported, such as raw HTML or 'LaTeX' blocks, 'LaTeX' math, superscripts, subscripts, footnotes,
-    element attributes, and appendices, but not all 'Pandoc' Markdown features are (or will be) supported. With additional JavaScript and CSS, you can also create HTML slides and articles. This package can be viewed as a trimmed-down version of R Markdown and 'knitr'. It does not aim at rich Markdown features or a large
-    variety of output formats (the primary formats are HTML and 'LaTeX'). Book and website projects of multiple input documents are also supported.
+  summary: Render R Markdown to Markdown (without using 'knitr'), and Markdown to lightweight HTML or 'LaTeX' documents with the 'commonmark' package (instead of 'Pandoc'). Some missing Markdown features in 'commonmark' are also supported, such as raw HTML or 'LaTeX' blocks, 'LaTeX' math, superscripts, subscripts, 
+    footnotes, element attributes, and appendices, but not all 'Pandoc' Markdown features are (or will be) supported. With additional JavaScript and CSS, you can also create HTML slides and articles. This package can be viewed as a trimmed-down version of R Markdown and 'knitr'. It does not aim at rich Markdown 
+    features or a large variety of output formats (the primary formats are HTML and 'LaTeX'). Book and website projects of multiple input documents are also supported.
   license_family: MIT
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
